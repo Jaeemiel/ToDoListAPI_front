@@ -62,6 +62,10 @@ Pour générer l'application au format desktop, les outils suivants sont obligat
 
 - [Rust](https://rustup.rs/)
 - **Visual Studio Build Tools** avec le workload _"Développement Desktop en C++"_
+- Executer les commandes suivantes pour installer tauri via `npm` : 
+- `npm install --save-dev @tauri-apps/cli`
+- `npm install @tauri-apps/api`
+- Suivi de la commande : `npx tauri init` pour l'initialisation de tauri dans le projet
 - Ajouter la clé suivante dans la clé `scripts` deja presente dans le fichier `package.json` :
 ```json
     "tauri": "tauri"
