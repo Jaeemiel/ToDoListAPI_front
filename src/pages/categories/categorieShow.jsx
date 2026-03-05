@@ -1,33 +1,22 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import {tacheService} from "../../services/api.js";
+import {categorieService} from "../../services/categorieService.js";
 
-const BADGE = {
-    A_FAIRE:  "badge bg-primary",
-    EN_COURS: "badge bg-warning text-dark",
-    TERMINE:  "badge bg-success"
-};
 
-const LABEL = {
-    A_FAIRE:  "À faire",
-    EN_COURS: "En cours",
-    TERMINE:  "Terminé"
-};
-
-function Show() {
+function CategorieShow() {
     const { id } = useParams();       // recupere l'id dans l'URL
     const navigate = useNavigate();   // pour rediriger apres suppression
-    const [tache, setTache] = useState(null);
+    const [categorie, setCategorie] = useState(null);
 
     useEffect(() => {
-        tacheService.getById(id).then(setTache);
+        categorieService.getById(id).then(setCategorie);
     }, [id]);
 
     const handleDelete = () => {
-        tacheService.delete(id).then(() => navigate("/"));
+        categorieService.delete(id).then(() => navigate("/"));
     };
 
-    if (!tache) return <div className="container py-4">Chargement...</div>;
+    if (!categorie) return <div className="container py-4">Chargement...</div>;
 
     return (
         <div className="container py-4">
@@ -36,11 +25,7 @@ function Show() {
             </Link>
             <div className="card">
                 <div className="card-body">
-                    <h2 className="card-title">{tache.titre}</h2>
-                    <p className="card-text">{tache.description ?? "—"}</p>
-                    <span className={BADGE[tache.statut]}>
-                        {LABEL[tache.statut]}
-                    </span>
+                    <h2 className="card-title">{categorie.nom}</h2>
                 </div>
                 <div className="card-footer d-flex gap-2">
                     <Link
@@ -61,4 +46,4 @@ function Show() {
     );
 }
 
-export default Show;
+export default CategorieShow;
