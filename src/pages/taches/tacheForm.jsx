@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { tacheService } from "../../services/api.js";
+import { tacheService } from "../../services/tacheService.js";
 
 const FORM_VIDE = { titre: "", description: "", statut: "A_FAIRE", categorie: { id: 1 } };
 

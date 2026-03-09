@@ -1,9 +1,9 @@
 import {useState, useEffect} from "react";
 import {Link, useNavigate} from "react-router-dom";
-import {tacheService} from "../../services/api.js";
+import {tacheService} from "../../services/tacheService.js";
 import TacheList from "../../components/TacheList.jsx";
 
-function Index() {
+function TacheIndex() {
     const [taches, setTaches] = useState([]);
     const navigate = useNavigate();
 
@@ -39,4 +39,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default TacheIndex;

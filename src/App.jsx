@@ -4,9 +4,12 @@ import Register from "./pages/auth/Register.jsx";
 import Login from "./pages/auth/Login.jsx";
 import Logout from "./pages/auth/Logout.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
-import Index from "./pages/taches/index.jsx";
-import Show from "./pages/taches/show.jsx";
-import TacheFormPage from "./pages/taches/form.jsx";
+import TacheIndex from "./pages/taches/tacheIndex.jsx";
+import TacheShow from "./pages/taches/tacheShow.jsx";
+import TacheFormPage from "./pages/taches/tacheForm.jsx";
+import CategorieIndex from "./pages/categories/categorieIndex.jsx";
+import CategorieShow from "./pages/categories/categorieShow.jsx";
+import CategorieFormPage from "./pages/categories/categorieForm.jsx";
 
 
 function App() {
@@ -20,13 +23,13 @@ function App() {
                     <Route
                         path="/"
                         element={
-                            <Index/>
+                            <TacheIndex/>
                         }
                     />
                     <Route
                         path="/taches"
                         element={
-                            <Index/>
+                            <TacheIndex/>
                         }
                     />
                     <Route
@@ -38,13 +41,38 @@ function App() {
                     <Route
                         path="/taches/:id"
                         element={
-                            <Show/>
+                            <TacheShow/>
                         }
                     />
                     <Route
                         path="/taches/:id/edit"
                         element={
                             <TacheFormPage/>
+                        }
+                    />
+
+                    <Route
+                        path="/categories"
+                        element={
+                            <CategorieIndex/>
+                        }
+                    />
+                    <Route
+                        path="/categories/create"
+                        element={
+                            <CategorieFormPage/>
+                        }
+                    />
+                    <Route
+                        path="/categories/:id"
+                        element={
+                            <CategorieShow/>
+                        }
+                    />
+                    <Route
+                        path="/categories/:id/edit"
+                        element={
+                            <CategorieFormPage/>
                         }
                     />
                 </Route>

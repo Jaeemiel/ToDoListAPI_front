@@ -49,7 +49,7 @@ export default function Register() {
                 </div>
                 <div className="text-center">
                     <button type="submit" className="btn btn-success">S'inscrire</button>
-                    <p className="p-2">Déjà un compte ? <Link to="/login">S'inscrire</Link></p>
+                    <p className="p-2">Déjà un compte ? <Link to="/login">Se connecter</Link></p>
                 </div>
             </form>
         </div>
